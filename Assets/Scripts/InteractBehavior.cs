@@ -7,17 +7,12 @@ public class InteractBehavior : MonoBehaviour
     [SerializeField]
     private MonoBehaviour interactable;
 
-    void Start()
-    {
-    }
-
     void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Player" && Input.GetButton("Submit"))
+        if(collider.gameObject.tag == "Player" && Input.GetKeyDown("return"))
         {
-            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-            renderer.color = Color.blue;
-            ((Interactable)interactable).OnPlayerInteract("test");
+            CurrentItem currentItem = collider.gameObject.GetComponent<CurrentItem>();
+            ((Interactable)interactable).OnPlayerInteract(currentItem.GetName());
         }
     }
 }
