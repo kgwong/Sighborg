@@ -7,12 +7,33 @@ public class InteractBehavior : MonoBehaviour
     [SerializeField]
     private MonoBehaviour interactable;
 
-    void OnTriggerStay2D(Collider2D collider)
+    private bool triggerStay = false;
+    private Collider2D player;
+
+    void Update()
     {
-        if(collider.gameObject.tag == "Player" && Input.GetKeyDown("return"))
+        if(triggerStay && Input.GetButtonDown("Submit"))
         {
-            CurrentItem currentItem = collider.gameObject.GetComponent<CurrentItem>();
+            CurrentItem currentItem = player.gameObject.GetComponent<CurrentItem>();
             ((Interactable)interactable).OnPlayerInteract(currentItem.GetName());
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Player")
+        {
+            triggerStay = true;
+            player = collider;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Player")
+        {
+            triggerStay = false;
+            player = null;
         }
     }
 }
