@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public AudioSource movementSound;
     private Rigidbody2D rb;
 
     void Start()
@@ -14,6 +15,18 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+         if(Input.GetButton("Horizontal"))
+         {
+             if(!movementSound.isPlaying)
+             {
+                 movementSound.Play();
+             }
+         }
+         else
+         {
+             movementSound.Stop();
+         }
+
         Vector3 vel = rb.velocity;
         vel.x = Input.GetAxis("Horizontal") * 10;
 

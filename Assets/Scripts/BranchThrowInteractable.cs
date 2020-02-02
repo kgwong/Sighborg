@@ -8,11 +8,17 @@ public class BranchThrowInteractable : MonoBehaviour, Interactable
     public Animator anim;
     public Animator dogAnim;
     public AudioSource branchThrowSound;
+    public AudioSource dogBarkSound;
     private GameObject door;
 
     void Start()
     {
         door = GameObject.Find("DogWall");
+    }
+
+    private void PlayDogBark()
+    {
+        dogBarkSound.Play();
     }
 
     public bool OnPlayerInteract(string currentItem)
@@ -22,6 +28,7 @@ public class BranchThrowInteractable : MonoBehaviour, Interactable
         {
             if (anim && dogAnim)
             {
+                Invoke("PlayDogBark", 0.25f);
                 anim.Play("branch");
                 dogAnim.Play("dog_fetch");
                 branchThrowSound.Play();
