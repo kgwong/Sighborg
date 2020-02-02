@@ -6,6 +6,7 @@ using UnityEngine;
 public class MissingStepInteractable : MonoBehaviour, Interactable
 {
     public Animator anim;
+    public SpriteRenderer spriteRenderer;
     private GameObject door;
 
     void Start()
@@ -13,7 +14,7 @@ public class MissingStepInteractable : MonoBehaviour, Interactable
         door = GameObject.Find("MissingStep");
     }
 
-    public void OnPlayerInteract(string currentItem)
+    public bool OnPlayerInteract(string currentItem)
     {
         Debug.Log(currentItem);
         if (door && currentItem == "Wood")
@@ -22,9 +23,12 @@ public class MissingStepInteractable : MonoBehaviour, Interactable
             {
                 anim.Play("gate");
             }
+            spriteRenderer.enabled = true;
             door.SetActive(false);
             door = null;
+            return true;
         }
+        return false;
     }
 
     void OnEnable()

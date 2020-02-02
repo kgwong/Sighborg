@@ -2176,7 +2176,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2196,7 +2196,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00028049154, y: 0.008695514}
+  m_Offset: {x: -0.000280492, y: 0.004252823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2207,7 +2207,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.020659018, y: 0.02739103}
+  m_Size: {x: 0.020659018, y: 0.018505648}
   m_EdgeRadius: 0
 --- !u!114 &1633049684
 MonoBehaviour:
@@ -2893,20 +2893,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 524852017175380196, guid: 80905a16cb5a8e5468d40af090ae3052,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 524852017175380196, guid: 80905a16cb5a8e5468d40af090ae3052,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 524852017175380197, guid: 80905a16cb5a8e5468d40af090ae3052,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.008695514
+      value: 0.004252823
       objectReference: {fileID: 0}
     - target: {fileID: 524852017175380197, guid: 80905a16cb5a8e5468d40af090ae3052,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.02739103
+      value: 0.018505648
       objectReference: {fileID: 0}
     - target: {fileID: 524852017175380197, guid: 80905a16cb5a8e5468d40af090ae3052,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.00028049154
+      value: -0.000280492
       objectReference: {fileID: 0}
     - target: {fileID: 524852017175380197, guid: 80905a16cb5a8e5468d40af090ae3052,
         type: 3}

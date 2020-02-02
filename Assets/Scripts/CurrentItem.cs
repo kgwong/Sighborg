@@ -32,4 +32,9 @@ public class CurrentItem : MonoBehaviour
         currentItem.GetComponent<PickupBehavior>().parentScene = SceneManager.GetActiveScene().name;
     }
 
+    public void UseItem()
+    {
+        Destroy(currentItem);
+    }
+
 }

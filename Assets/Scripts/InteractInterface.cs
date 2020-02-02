@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface Interactable
 {
-    void OnPlayerInteract(string currentItem);
+    bool OnPlayerInteract(string currentItem);
 }

@@ -13,7 +13,7 @@ public class GateOpenInteractable : MonoBehaviour, Interactable
         door = GameObject.Find("Gate");
     }
 
-    public void OnPlayerInteract(string currentItem)
+    public bool OnPlayerInteract(string currentItem)
     {
         Debug.Log(currentItem);
         if (door && currentItem == "Oilcan")
@@ -23,7 +23,9 @@ public class GateOpenInteractable : MonoBehaviour, Interactable
             anim.Play("gate");
             door.SetActive(false);
             door = null;
+            return true;
         }
+        return false;
     }
 
     void OnEnable()

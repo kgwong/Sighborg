@@ -14,7 +14,7 @@ public class BranchThrowInteractable : MonoBehaviour, Interactable
         door = GameObject.Find("DogWall");
     }
 
-    public void OnPlayerInteract(string currentItem)
+    public bool OnPlayerInteract(string currentItem)
     {
         Debug.Log(currentItem);
         if (door && currentItem == "Branch")
@@ -26,7 +26,9 @@ public class BranchThrowInteractable : MonoBehaviour, Interactable
             }
             door.SetActive(false);
             door = null;
+            return false; //don't delete this one 
         }
+        return false;
     }
 
     void OnEnable()

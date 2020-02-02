@@ -17,7 +17,11 @@ public class InteractBehavior : MonoBehaviour
             CurrentItem currentItem = player.gameObject.GetComponent<CurrentItem>();
             if (interactable)
             {
-                ((Interactable)interactable).OnPlayerInteract(currentItem.GetName());
+                bool res = ((Interactable)interactable).OnPlayerInteract(currentItem.GetName());
+                if (res)
+                {
+                    currentItem.UseItem();
+                }
             }
         }
     }
