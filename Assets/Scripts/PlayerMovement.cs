@@ -18,5 +18,12 @@ public class PlayerMovement : MonoBehaviour
         vel.x = Input.GetAxis("Horizontal") * 10;
 
         rb.velocity = vel;
+        Vector3 scale = gameObject.transform.localScale;
+
+        if(rb.velocity.x * scale.x < 0)
+        {
+            scale.x *= -1;
+            gameObject.transform.localScale = scale;
+        }
     }
 }
