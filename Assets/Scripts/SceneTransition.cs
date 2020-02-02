@@ -12,7 +12,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            SceneController.LoadScene(sceneName);
         }
     }
 }

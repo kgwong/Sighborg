@@ -9,7 +9,6 @@ public class DoorOpenInteractable : MonoBehaviour, Interactable
 
     public void OnPlayerInteract(string currentItem)
     {
-        Debug.Log(currentItem);
         Destroy(door);
     }
 }
