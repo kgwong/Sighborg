@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class DoorOpenInteractable : MonoBehaviour, Interactable
+public class MissingStepInteractable : MonoBehaviour, Interactable
 {
     public Animator anim;
     private GameObject door;
 
     void Start()
     {
-        door = GameObject.Find("Gate");
+        door = GameObject.Find("MissingStep");
     }
 
     public void OnPlayerInteract(string currentItem)
     {
         Debug.Log(currentItem);
-        if (door && currentItem == "Oilcan")
+        if (door && currentItem == "Wood")
         {
-            //door.GetComponent<BoxCollider2D>().enabled = false;
-            //anim["gate"].wrapMode = WrapMode.Once;
-            anim.Play("gate");
+            if (anim)
+            {
+                anim.Play("gate");
+            }
             door.SetActive(false);
             door = null;
         }
@@ -40,7 +41,7 @@ public class DoorOpenInteractable : MonoBehaviour, Interactable
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "Scene1")
+        if(scene.name == "Scene3")
         {
             gameObject.SetActive(true);
         }
