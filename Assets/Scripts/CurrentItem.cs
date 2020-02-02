@@ -20,7 +20,7 @@ public class CurrentItem : MonoBehaviour
     public string GetName()
     {
         if (currentItem == null) return null;
-        return currentItem.GetComponent<PickupBehavior>().name;
+        return currentItem.name;
     }
 
     private void DropItem()

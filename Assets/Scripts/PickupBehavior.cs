@@ -6,24 +6,9 @@ using UnityEngine;
 public class PickupBehavior : MonoBehaviour
 {
     public string parentScene;
-    public string name;
 
     private bool triggerStay = false;
     private Collider2D player;
-
-    private static Dictionary<string, PickupBehavior> pickupInstances = new Dictionary<string, PickupBehavior>();
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        if (pickupInstances.ContainsKey(name))
-        {
-            DestroyObject(gameObject);
-        }
-        else
-        {
-            pickupInstances.Add(name, this);
-        }
-    }
 
     void Update()
     {

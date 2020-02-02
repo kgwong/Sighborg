@@ -7,20 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    private static PlayerMovement playerInstance;
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        if (playerInstance == null)
-        {
-            playerInstance = this;
-        }
-        else
-        {
-            DestroyObject(gameObject);
-        }
-    }
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

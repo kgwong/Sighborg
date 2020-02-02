@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 256396656}
   - component: {fileID: 256396655}
   - component: {fileID: 256396653}
+  - component: {fileID: 256396654}
   m_Layer: 9
   m_Name: Gate
   m_TagString: Environment
@@ -165,6 +166,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01}
   m_EdgeRadius: 0
+--- !u!114 &256396654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256396652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26df6666ce1b4347bdc09a7adab0eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &256396655
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -223,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256396652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.37, y: -0.4, z: -7.1132812}
+  m_LocalPosition: {x: 8.37, y: 1.73, z: -7.1132812}
   m_LocalScale: {x: 200, y: 500, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -433,6 +446,7 @@ GameObject:
   - component: {fileID: 1116747506}
   - component: {fileID: 1116747509}
   - component: {fileID: 1116747510}
+  - component: {fileID: 1116747511}
   m_Layer: 0
   m_Name: Switch
   m_TagString: Untagged
@@ -542,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca5a3b07e9de3749bf6c1746e6692a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 1116747510}
+  triggerStay: 0
 --- !u!114 &1116747510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +569,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f47ec9d0ed059c4a8d261213a70e3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 256396652}
+--- !u!114 &1116747511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116747505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26df6666ce1b4347bdc09a7adab0eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1312265119
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +593,7 @@ GameObject:
   - component: {fileID: 1312265121}
   - component: {fileID: 1312265123}
   - component: {fileID: 1312265120}
+  - component: {fileID: 1312265124}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Item
@@ -588,7 +614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentScene: Scene1
-  name: Hammer
 --- !u!212 &1312265121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -679,6 +704,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01}
   m_EdgeRadius: 0
+--- !u!114 &1312265124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312265119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26df6666ce1b4347bdc09a7adab0eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1633049679
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +731,7 @@ GameObject:
   - component: {fileID: 1633049683}
   - component: {fileID: 1633049684}
   - component: {fileID: 1633049685}
+  - component: {fileID: 1633049686}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -841,6 +879,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf35178dd8b88f04eacae46a12306326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1633049686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633049679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26df6666ce1b4347bdc09a7adab0eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681583648
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +903,7 @@ GameObject:
   - component: {fileID: 1681583651}
   - component: {fileID: 1681583650}
   - component: {fileID: 1681583649}
+  - component: {fileID: 1681583653}
   m_Layer: 0
   m_Name: Wrench
   m_TagString: Item
@@ -873,7 +924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentScene: Scene1
-  name: Wrench
 --- !u!61 &1681583650
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -964,6 +1014,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1681583653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681583648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26df6666ce1b4347bdc09a7adab0eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1986522670
 PrefabInstance:
   m_ObjectHideFlags: 0
