@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class DoorKnobInteractable : MonoBehaviour, Interactable
+public class BranchThrowInteractable : MonoBehaviour, Interactable
 {
     public Animator anim;
+    public Animator dogAnim;
     private GameObject door;
 
     void Start()
     {
-        door = GameObject.Find("Door");
+        door = GameObject.Find("DogWall");
     }
 
     public void OnPlayerInteract(string currentItem)
     {
         Debug.Log(currentItem);
-        if (door && currentItem == "Doorknob")
+        if (door && currentItem == "Branch")
         {
-            if (anim)
+            if (anim && dogAnim)
             {
-                anim.Play("gate");
+                anim.Play("branch");
+                dogAnim.Play("dog_fetch");
             }
             door.SetActive(false);
             door = null;
