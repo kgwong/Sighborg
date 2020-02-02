@@ -6,6 +6,7 @@ using UnityEngine;
 public class PickupBehavior : MonoBehaviour
 {
     public string parentScene;
+    public AudioSource optOnPickupSound;
 
     private bool triggerStay = false;
     private Collider2D player;
@@ -14,6 +15,10 @@ public class PickupBehavior : MonoBehaviour
     {
         if(triggerStay && Input.GetButtonDown("Submit"))
         {
+            if (optOnPickupSound)
+            {
+                optOnPickupSound.Play();
+            }
             CurrentItem currentItem = player.GetComponent<CurrentItem>();
             currentItem.SetCurrentItem(gameObject);
         }

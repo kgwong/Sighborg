@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MissingStepInteractable : MonoBehaviour, Interactable
 {
-    public Animator anim;
     public SpriteRenderer spriteRenderer;
+    public AudioSource hammerSound;
     private GameObject door;
 
     void Start()
@@ -19,10 +19,7 @@ public class MissingStepInteractable : MonoBehaviour, Interactable
         Debug.Log(currentItem);
         if (door && currentItem == "Wood")
         {
-            if (anim)
-            {
-                anim.Play("gate");
-            }
+            hammerSound.Play();
             spriteRenderer.enabled = true;
             door.SetActive(false);
             door = null;

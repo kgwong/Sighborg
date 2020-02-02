@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CurrentItem : MonoBehaviour
 {
     public Transform graspPoint;
+    public AudioSource pickupSound;
     private GameObject currentItem;
 
     public void SetCurrentItem(GameObject go)
@@ -14,6 +15,7 @@ public class CurrentItem : MonoBehaviour
         {
             DropItem();
         }
+        pickupSound.Play();
         currentItem = go;
         currentItem.transform.parent = graspPoint;
         currentItem.transform.localPosition = new Vector3(0f, 0f, 0f);
