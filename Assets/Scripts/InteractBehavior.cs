@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractBehavior : MonoBehaviour
 {
     [SerializeField]
-   // private MonoBehaviour interactable;
+    private MonoBehaviour interactable;
 
     private bool triggerStay = false;
     private Collider2D player;
@@ -15,9 +15,9 @@ public class InteractBehavior : MonoBehaviour
         if(triggerStay && Input.GetButtonDown("Submit"))
         {
             CurrentItem currentItem = player.gameObject.GetComponent<CurrentItem>();
-       //     if (interactable)
+            if (interactable)
             {
-     //           ((Interactable)interactable).OnPlayerInteract(currentItem.GetName());
+                ((Interactable)interactable).OnPlayerInteract(currentItem.GetName());
             }
         }
     }

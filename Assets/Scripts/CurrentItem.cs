@@ -15,6 +15,7 @@ public class CurrentItem : MonoBehaviour
         }
         currentItem = go;
         currentItem.transform.parent = gameObject.transform;
+        currentItem.GetComponent<SpriteRenderer>().sortingOrder = 0;
     }
 
     public string GetName()

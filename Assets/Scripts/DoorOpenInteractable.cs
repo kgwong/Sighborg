@@ -5,20 +5,25 @@ using UnityEngine;
 
 public class DoorOpenInteractable : MonoBehaviour, Interactable
 {
-    //private GameObject door;
+    public Animator anim;
+    private GameObject door;
 
     void Start()
     {
-        //door = GameObject.Find("Gate");
+        door = GameObject.Find("Gate");
     }
 
     public void OnPlayerInteract(string currentItem)
     {
-        /*if (door)
+        Debug.Log(currentItem);
+        if (door && currentItem == "Oilcan")
         {
+            //door.GetComponent<BoxCollider2D>().enabled = false;
+            //anim["gate"].wrapMode = WrapMode.Once;
+            anim.Play("gate");
             door.SetActive(false);
             door = null;
-        }*/
+        }
     }
 
     void OnEnable()
