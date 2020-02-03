@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource movementSound;
     [SerializeField]
     public AudioSource bgMusic;
+    public AudioSource lullaby;
     private Rigidbody2D rb;
 
     void Start()
@@ -20,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Scene4")
         {
             bgMusic.Stop();
+            if(!lullaby.isPlaying)
+            {
+                lullaby.Play();
+            }
         }
     }
 
