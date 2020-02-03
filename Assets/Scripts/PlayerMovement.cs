@@ -6,11 +6,21 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     public AudioSource movementSound;
+    [SerializeField]
+    public AudioSource bgMusic;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Scene4")
+        {
+            bgMusic.Stop();
+        }
     }
 
     void FixedUpdate()

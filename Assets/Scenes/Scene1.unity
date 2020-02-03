@@ -2521,6 +2521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSound: {fileID: 1633049692}
+  bgMusic: {fileID: 1633049688}
 --- !u!114 &1633049685
 MonoBehaviour:
   m_ObjectHideFlags: 0
