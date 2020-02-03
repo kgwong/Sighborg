@@ -23,7 +23,6 @@ public class BranchThrowInteractable : MonoBehaviour, Interactable
 
     public bool OnPlayerInteract(string currentItem)
     {
-        Debug.Log(currentItem);
         if (door && currentItem == "Branch")
         {
             if (anim && dogAnim)

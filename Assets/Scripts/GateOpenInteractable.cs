@@ -13,7 +13,6 @@ public class GateOpenInteractable : MonoBehaviour, Interactable
     void Start()
     {
         door = GameObject.Find("Gate");
-        //audioSource = GetComponent<AudioSource>();
     }
 
     private void PlayDelayedAnimation()
@@ -24,12 +23,9 @@ public class GateOpenInteractable : MonoBehaviour, Interactable
 
     public bool OnPlayerInteract(string currentItem)
     {
-        Debug.Log(currentItem);
         if (door && currentItem == "Oilcan")
         {
             Invoke("PlayDelayedAnimation", 0.5f);
-            //door.GetComponent<BoxCollider2D>().enabled = false;
-            //anim["gate"].wrapMode = WrapMode.Once;
             oilCanAudioSource.Play();
 
 

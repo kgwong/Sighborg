@@ -16,7 +16,6 @@ public class MissingStepInteractable : MonoBehaviour, Interactable
 
     public bool OnPlayerInteract(string currentItem)
     {
-        Debug.Log(currentItem);
         if (door && currentItem == "Wood")
         {
             hammerSound.Play();
